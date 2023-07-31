@@ -1,13 +1,12 @@
-import {WeatherProvider} from "./context/WeatherContext.tsx";
+import { WeatherProvider } from "./context/WeatherContext.tsx";
 import Page from "./components/Page.tsx";
 
 function App() {
-
-    return (
-        <WeatherProvider>
-            <Page />
-        </WeatherProvider>
-    );
+  return (
+    <WeatherProvider>
+      <Page />
+    </WeatherProvider>
+  );
 }
 
-export default App
+export default App;

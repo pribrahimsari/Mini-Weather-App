@@ -1,9 +1,5 @@
 const Page = () => {
-    return (
-        <div>
-            {/* todo */}
-        </div>
-    );
+  return <div>{/* todo */}</div>;
 };
 
 export default Page;
