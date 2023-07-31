@@ -1,10 +1,13 @@
-import Button from '@mui/material/Button';
+import {WeatherProvider} from "./context/WeatherContext.tsx";
+import Page from "./components/Page.tsx";
 
 function App() {
+
     return (
-        <div>
-            <Button variant="contained">Hello World</Button>
-        </div>
+        <WeatherProvider>
+            <Page />
+        </WeatherProvider>
     );
 }
+
 export default App
