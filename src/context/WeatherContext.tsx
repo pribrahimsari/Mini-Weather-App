@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState } from "react";
+import { CityOption } from "../components/CityAutocomplete.tsx";
 
 interface IWeatherContext {
-  selectedCity: null;
-  setSelectedCity: React.Dispatch<React.SetStateAction<null>>;
+  selectedCity: CityOption | null;
+  setSelectedCity: React.Dispatch<React.SetStateAction<CityOption | null>>;
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   weatherData: null;
@@ -16,7 +17,7 @@ export const WeatherProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [selectedCity, setSelectedCity] = useState(null);
+  const [selectedCity, setSelectedCity] = useState<CityOption | null>(null);
   const [loading, setLoading] = useState(false);
   const [weatherData, setWeatherData] = useState(null);
 

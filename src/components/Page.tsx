@@ -1,7 +1,8 @@
 import { Box, Paper } from "@mui/material";
 import { SxProps } from "@mui/system";
 import { Theme } from "@mui/material/styles";
-import CityAutocomplete from "./CityAutocomplete.tsx";
+import CityAutocomplete, { CityOption } from "./CityAutocomplete.tsx";
+import { useWeather } from "../context/WeatherContext.tsx";
 
 const paperSxProps: SxProps<Theme> = {
   width: "50vw",
@@ -19,10 +20,16 @@ const cityAutocompleteWrapperSxProps: SxProps<Theme> = {
 };
 
 const Page = () => {
+  const { selectedCity, setSelectedCity } = useWeather();
+
+  const onChangeHandler = (newValue: CityOption | null) => {
+    setSelectedCity(newValue);
+  };
+
   return (
     <Paper sx={paperSxProps} elevation={3} square={false}>
       <Box sx={cityAutocompleteWrapperSxProps}>
-        <CityAutocomplete />
+        <CityAutocomplete value={selectedCity} onChange={onChangeHandler} />
       </Box>
 
       <Box>todo</Box>
