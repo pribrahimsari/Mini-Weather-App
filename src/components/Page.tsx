@@ -3,6 +3,7 @@ import { SxProps } from "@mui/system";
 import { Theme } from "@mui/material/styles";
 import CityAutocomplete, { CityOption } from "./CityAutocomplete.tsx";
 import { useWeather } from "../context/WeatherContext.tsx";
+import WeatherForecast from "./WeatherForecast.tsx";
 
 const paperSxProps: SxProps<Theme> = {
   width: "50vw",
@@ -32,7 +33,13 @@ const Page = () => {
         <CityAutocomplete value={selectedCity} onChange={onChangeHandler} />
       </Box>
 
-      <Box>todo</Box>
+      <Box
+        sx={{
+          minWidth: "100%",
+        }}
+      >
+        <WeatherForecast />
+      </Box>
     </Paper>
   );
 };
