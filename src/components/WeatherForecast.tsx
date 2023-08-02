@@ -3,7 +3,7 @@ import { useWeather } from "../context/WeatherContext.tsx";
 import { Alert } from "@mui/material";
 import SkeletonLoading from "./SkeletonLoading.tsx";
 
-const WEATHER_FORECEST_API_URL = import.meta.env.VITE_WEATHER_FORECEST_API_URL;
+const WEATHER_FORECAST_API_URL = import.meta.env.VITE_WEATHER_FORECEST_API_URL;
 const API_KEY = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
 
 const WeatherForecast = () => {
@@ -19,7 +19,7 @@ const WeatherForecast = () => {
       setLoading(true);
 
       await fetch(
-        `${WEATHER_FORECEST_API_URL}?q=${selectedCity.label},tr&appid=${API_KEY}`,
+        `${WEATHER_FORECAST_API_URL}?q=${selectedCity.label},tr&appid=${API_KEY}`,
       )
         .then(data => data.json())
         .then(async data => {
