@@ -22,9 +22,9 @@ const ForecastDaily = ({ forecast }: { forecast: IForecast }) => {
       <Box>
         <Avatar alt="Weather" src={iconUrl} sx={{ width: 100, height: 100 }} />
       </Box>
-      <Box display="flex" justifyContent="space-between" width="80%">
-        <Box>{kelvinToCelcius(forecast.main.temp_max)}°</Box>
-        <Box>{kelvinToCelcius(forecast.main.temp_min)}°</Box>
+      <Box display="flex" justifyContent="space-between" width="100%">
+        <Box>{kelvinToCelcius(forecast.main.temp_max)} °</Box>
+        <Box>{kelvinToCelcius(forecast.main.temp_min)} °</Box>
       </Box>
     </Box>
   );
