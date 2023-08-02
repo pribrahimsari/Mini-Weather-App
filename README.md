@@ -38,7 +38,7 @@ yarn install
 - **Get Your [OpenWeatherMap API Key](https://openweathermap.org/) and paste it to your env file**
   - Final .env file should look like:
 ```.env
-VITE_WEATHER_FORECEST_API_URL=http://api.openweathermap.org/data/2.5/forecast
+VITE_WEATHER_FORECEST_API_URL=https://api.openweathermap.org/data/2.5/forecast
 VITE_OPENWEATHERMAP_API_KEY=<<YOUR_OPEN_WEATHER_MAP_API_KEY>>
 ```
 
