@@ -3,6 +3,7 @@ import { useWeather } from "../context/WeatherContext.tsx";
 import { Alert } from "@mui/material";
 import SkeletonLoading from "./SkeletonLoading.tsx";
 import { IForecast } from "../types/API.tsx";
+import ForecastRenderer from "./ForecastRenderer.tsx";
 
 const WEATHER_FORECAST_API_URL = import.meta.env.VITE_WEATHER_FORECEST_API_URL;
 const API_KEY = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
@@ -50,7 +51,15 @@ const WeatherForecast = () => {
     return <Alert severity="info">PLease select a city!</Alert>;
   }
 
-  return <div>TODO: {selectedCity?.label}</div>;
+  if (!forecastData.length) {
+    return (
+      <Alert severity="warning">
+        Forecast data is not available for the selected city.
+      </Alert>
+    );
+  }
+
+  return <ForecastRenderer forecastData={forecastData} />;
 };
 
 export default WeatherForecast;
