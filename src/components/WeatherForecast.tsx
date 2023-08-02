@@ -8,13 +8,13 @@ const WEATHER_FORECAST_API_URL = import.meta.env.VITE_WEATHER_FORECEST_API_URL;
 const API_KEY = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
 
 const WeatherForecast = () => {
-  const { selectedCity } = useWeather();
+  const weatherContext = useWeather();
 
   const [loading, setLoading] = useState(false);
   const [forecastData, setForecastData] = useState<IForecast[]>([]);
 
   useEffect(() => {
-    if (!selectedCity) {
+    if (!weatherContext?.selectedCity) {
       setForecastData([]);
       return;
     }
@@ -24,7 +24,9 @@ const WeatherForecast = () => {
       setLoading(true);
 
       await fetch(
-        `${WEATHER_FORECAST_API_URL}?q=${selectedCity.label},tr&appid=${API_KEY}`,
+        `${WEATHER_FORECAST_API_URL}?q=${
+          weatherContext.selectedCity!.label
+        },tr&appid=${API_KEY}`,
       )
         .then(data => data.json())
         .then(async data => {
@@ -37,14 +39,14 @@ const WeatherForecast = () => {
     };
 
     fetchWeatherData();
-  }, [selectedCity]);
+  }, [weatherContext?.selectedCity]);
 
   // RENDER RESULTS
   if (loading) {
     return <SkeletonLoading />;
   }
 
-  if (!selectedCity) {
+  if (!weatherContext?.selectedCity) {
     return <Alert severity="info">PLease select a city!</Alert>;
   }
 
