@@ -1,6 +1,6 @@
-import React from "react";
 import { CITIES } from "../constant/cities.ts";
 import { Autocomplete, TextField } from "@mui/material";
+import { SyntheticEvent } from "react";
 
 export interface CityOption {
   id: number;
@@ -17,7 +17,7 @@ const CityAutocomplete = ({
   onChange,
 }: {
   value: CityOption | null;
-  onChange: () => void;
+  onChange: (v: CityOption | null) => void;
 }) => {
   return (
     <Autocomplete
@@ -26,7 +26,10 @@ const CityAutocomplete = ({
       renderInput={params => <TextField {...params} label="City" />}
       //
       value={value}
-      onChange={(event: never, newValue: CityOption | null) => {
+      onChange={(
+        _event: SyntheticEvent<Element, Event>,
+        newValue: CityOption | null,
+      ) => {
         onChange(newValue);
       }}
     />

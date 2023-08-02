@@ -21,16 +21,19 @@ const cityAutocompleteWrapperSxProps: SxProps<Theme> = {
 };
 
 const Page = () => {
-  const { selectedCity, setSelectedCity } = useWeather();
+  const weatherContext = useWeather();
 
   const onChangeHandler = (newValue: CityOption | null) => {
-    setSelectedCity(newValue);
+    weatherContext?.setSelectedCity(newValue);
   };
 
   return (
     <Paper sx={paperSxProps} elevation={3} square={false}>
       <Box sx={cityAutocompleteWrapperSxProps}>
-        <CityAutocomplete value={selectedCity} onChange={onChangeHandler} />
+        <CityAutocomplete
+          value={weatherContext?.selectedCity || null}
+          onChange={onChangeHandler}
+        />
       </Box>
 
       <Box
