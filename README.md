@@ -1,9 +1,10 @@
 # Mini Weather App
 React + TypeScript + Vite application to refresh my basic React and ContextAPI knowledge.
-- Linked Task Description: https://academy.patika.dev/courses/react/odev3
+Select a city in TR and see 5-day weather forecast.
+- For more details task desc.: https://academy.patika.dev/courses/react/odev3
 
 ## Live Demo
-Visit the link: TODO:.....
+Visit the link: [Mini Weather App by Vercel](https://mini-weather-bqdamlmv5-ibrahimsari.vercel.app/)
 
 ## Features
 Created/Started via Vite's TypeScript + React minimal setup: `yarn create vite mini-weather-app --template react-ts`
@@ -16,12 +17,13 @@ Created/Started via Vite's TypeScript + React minimal setup: `yarn create vite m
 - Linting Utility: [ESLint](https://eslint.org/)
 - Code Formatter: [Prettier](https://prettier.io/)
 - VCS: Git
+- Deployment: [Vercel](https://vercel.com/)
 
 ## Test in local environment
 
 - **Clone repo:**
 ```bash
-git clone https://github.com/todo
+git clone https://github.com/pribrahimsari/Mini-Weather-App.git
 ```
 
 - **Install dependencies:**
