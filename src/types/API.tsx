@@ -7,7 +7,7 @@ export interface IForecast {
   visibility: number;
   pop: number;
   sys: ISys;
-  dt_txt: Date;
+  dt_txt: string;
 }
 
 export interface IClouds {
