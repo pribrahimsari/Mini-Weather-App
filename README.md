@@ -4,7 +4,7 @@ Select a city in TR and see 5-day weather forecast.
 - For more details task desc.: https://academy.patika.dev/courses/react/odev3
 
 ## Live Demo
-Visit the link: [Mini Weather App by Vercel](https://mini-weather-bqdamlmv5-ibrahimsari.vercel.app/)
+Visit the link: [Mini Weather App by Vercel](https://mini-weather-app-nine.vercel.app/)
 
 ## Features
 Created/Started via Vite's TypeScript + React minimal setup: `yarn create vite mini-weather-app --template react-ts`
